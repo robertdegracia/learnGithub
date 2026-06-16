@@ -17,6 +17,6 @@ elif [[ "$name_only" == "no" ]]; then
 	echo "${cmd[@]}"
 	eval "${cmd[@]}"
 else
-	echo "arg $name_only not a valid argument"
+	echo "argument $name_only not a valid argument"
 	echo "use either: historyLog or historyLog no"
 fi
