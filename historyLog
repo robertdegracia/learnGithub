@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# git log
+
+echo "Running log"
+
+name_only="$1"
+
+cmd=("git log" "--graph" "--oneline" "--all" "--decorate")
+
+if [ -z "$name_only" ]; then
+	echo "${cmd[@]}"
+	eval "${cmd[@]}"
+elif [[ "$name_only" == "no" ]]; then
+	echo "--name-only arg added"
+	cmd+=("--name-only")
+	echo "${cmd[@]}"
+	eval "${cmd[@]}"
+else
+	echo "arg $name_only not a valid argument"
+	echo "use either: historyLog or historyLog no"
+fi
